@@ -1,5 +1,7 @@
 package com.zl.rxretrofitmvp.http.interceptor;
 
+import com.orhanobut.logger.Logger;
+
 import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
@@ -11,6 +13,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 public class HttpLoggerInterceptor implements HttpLoggingInterceptor.Logger {
     @Override
     public void log(String message) {
-
+        Logger.json(message);
     }
 }

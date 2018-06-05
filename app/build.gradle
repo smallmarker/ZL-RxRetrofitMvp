@@ -33,4 +33,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     implementation 'com.google.guava:guava:25.1-jre'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation 'com.orhanobut:logger:2.2.0'
 }
