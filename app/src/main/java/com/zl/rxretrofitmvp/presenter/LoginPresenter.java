@@ -18,18 +18,20 @@ public class LoginPresenter extends BasePresenter<LoginModel,LoginContract.Login
 
     @Override
     public void login(String userName, String userPwd) {
-
+        mView.showLoading();
         mModel.login(userName,userPwd,this);
 
     }
 
     @Override
     public void loginSuccess() {
+        mView.hideLoading();
         mView.loginSuccess();
     }
 
     @Override
     public void loginFail() {
+        mView.hideLoading();
         mView.loginFail();
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.zl.rxretrofitmvp.R;
 import com.zl.rxretrofitmvp.base.BaseActivity;
@@ -24,6 +25,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         setContentView(R.layout.activity_main);
         mProvincesListView = findViewById(R.id.lv_province);
         mPresenter.getProvince();
+        mProvincesListView.setOnItemClickListener((parent, view, position, id) ->
+                Toast.makeText(this,"item -> " + (position + 1),Toast.LENGTH_SHORT).show());
     }
 
     @Override

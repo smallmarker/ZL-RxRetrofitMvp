@@ -1,7 +1,5 @@
 package com.zl.rxretrofitmvp.model;
 
-import android.annotation.SuppressLint;
-
 import com.orhanobut.logger.Logger;
 import com.zl.rxretrofitmvp.base.BaseModel;
 import com.zl.rxretrofitmvp.bean.Province;
@@ -17,7 +15,10 @@ import java.util.List;
  **/
 public class MainModel extends BaseModel {
 
-    @SuppressLint("CheckResult")
+    /**
+     * 获取省信息
+     * @param listener 回调
+     */
     public void getProvince(MainListener listener) {
         HttpRx.normal(getApiManager().province())
                 .subscribe(new MySubscriber<List<Province>>() {

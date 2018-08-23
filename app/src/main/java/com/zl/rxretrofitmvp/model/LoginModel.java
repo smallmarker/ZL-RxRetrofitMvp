@@ -9,13 +9,20 @@ import com.zl.rxretrofitmvp.base.BaseModel;
  **/
 public class LoginModel extends BaseModel {
 
-    public void login(String userName, String userPwd,LoginListener listener) {
+    /**
+     * 模仿简单的登录
+     * @param userName 用户名
+     * @param userPwd 用户密码
+     * @param listener 回调监听
+     */
+    public void login(String userName, String userPwd, LoginListener listener) {
 
         if ("xiaolong".equals(userName) && "123456".equals(userPwd)) {
             listener.loginSuccess();
         } else {
             listener.loginFail();
         }
+
     }
 
 }

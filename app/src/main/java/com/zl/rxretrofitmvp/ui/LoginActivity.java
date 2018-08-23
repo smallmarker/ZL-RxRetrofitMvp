@@ -3,9 +3,12 @@ package com.zl.rxretrofitmvp.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.zl.rxretrofitmvp.R;
 import com.zl.rxretrofitmvp.base.BaseActivity;
 import com.zl.rxretrofitmvp.contract.LoginContract;
@@ -44,21 +47,21 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     public void loginSuccess() {
         startActivity(new Intent(this,MainActivity.class));
-        Toast.makeText(this,"login success",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"login success",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void loginFail() {
-        Toast.makeText(this,"login fail",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"login fail",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showLoading() {
-
+        Logger.d("loading......");
     }
 
     @Override
     public void hideLoading() {
-
+        Logger.d("loading complete");
     }
 }
